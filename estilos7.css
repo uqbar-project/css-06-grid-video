@@ -1,0 +1,45 @@
+/* Configuración para que no haya paddings ni margins */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.main {
+  /* Configuramos el ancho y alto total del browser */
+  width: 100vw;
+  height: 100vh;
+
+  /* El gap */
+  gap: 0.5rem;
+
+  /* Configuraciones de Grid */
+  display: grid;
+
+  /* Podemos mezclar medidas absolutas y relativas */
+  grid-template-columns: 
+    100px min-content minmax(100px, 100vw);
+    /* min-content toma el menor contenido posible, depende del contenido */
+    /* si reemplazamos min-content por 1fr toma el máximo */
+  grid-template-rows: 1fr;    
+}
+
+.primero {
+  background-color: coral;
+}
+
+.segundo {
+  background-color: lightgreen;
+  color: black;
+}
+
+.tercero {
+  background-color: steelblue;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

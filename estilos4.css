@@ -1,0 +1,59 @@
+/* Configuración para que no haya paddings ni margins */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.main {
+  /* Configuramos el ancho y alto total del browser */
+  width: 100vw;
+  height: 100vh;
+
+  /* El gap */
+  gap: 0.5rem;
+
+  /* Configuraciones de Grid */
+  display: grid;
+
+  /* Al utilizar fracciones no tenemos que recalcular % */
+  grid-template-rows: 
+    [header-start]
+    1fr
+    [header-end]
+    3fr
+    [footer-start]
+    1fr
+    [footer-end];
+  grid-template-columns: 
+    [sidebar-start]
+    1fr
+    [sidebar-end content-start]
+    3fr
+    [content-end];
+}
+
+.header {
+  background-color: darkturquoise;
+  grid-row: header-start / header-end;
+  grid-column: sidebar-start / content-end;
+}
+
+.sidebar {
+  background-color: orange;
+  grid-row: header-end / footer-start;
+  grid-column: sidebar-start / sidebar-end;
+}
+
+.content {
+  background-color: yellowgreen;
+  grid-row: header-end / footer-start;
+  grid-column: content-start / content-end;
+}
+
+.footer {
+  background-color: slateblue;
+  grid-row: footer-start / footer-end;
+  grid-column: sidebar-start / content-end;
+}

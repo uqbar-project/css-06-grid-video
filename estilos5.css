@@ -1,0 +1,50 @@
+/* Configuración para que no haya paddings ni margins */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.main {
+  /* Configuramos el ancho y alto total del browser */
+  width: 100vw;
+  height: 100vh;
+
+  /* El gap */
+  gap: 0.5rem;
+
+  /* Configuraciones de Grid */
+  display: grid;
+
+  /* Al utilizar fracciones no tenemos que recalcular % */
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  /* lo definimos en el template de las áreas */
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer"
+}
+
+/* Eliminamos del ejemplo anterior las definiciones 
+   grid-row y grid-column */
+.header {
+  background-color: darkturquoise;
+  grid-area: header;
+}
+
+.sidebar {
+  background-color: orange;
+  grid-area: sidebar;
+}
+
+.content {
+  background-color: yellowgreen;
+  grid-area: content;
+}
+
+.footer {
+  background-color: slateblue;
+  grid-area: footer;
+}

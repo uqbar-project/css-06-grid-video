@@ -1,0 +1,43 @@
+/* Configuración para que no haya paddings ni margins */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.main {
+  /* Configuramos el ancho y alto total del browser */
+  width: 100vw;
+  height: 100vh;
+
+  /* Configuraciones de Grid */
+  display: grid;
+
+  grid-template-rows: 20% 60% 20%;
+  grid-template-columns: 20% 80%;
+}
+
+.header {
+  background-color: darkturquoise;
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+}
+
+.sidebar {
+  background-color: orange;
+  grid-row: 2 / 3;
+  grid-column: 1 / 1;
+}
+
+.content {
+  background-color: yellowgreen;
+  grid-row: 2 / 3;
+  grid-column: 2 / -1;
+}
+
+.footer {
+  background-color: slateblue;
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
+}
